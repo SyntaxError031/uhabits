@@ -35,6 +35,7 @@
     <attr name="mediumContrastReverseTextColor" format="reference"/>
     <attr name="lowContrastReverseTextColor" format="reference"/>
 
+    <attr name="iconAchievement" format="reference"/>
     <attr name="iconAdd" format="reference"/>
     <attr name="iconArchive" format="reference"/>
     <attr name="iconChangeColor" format="reference"/>

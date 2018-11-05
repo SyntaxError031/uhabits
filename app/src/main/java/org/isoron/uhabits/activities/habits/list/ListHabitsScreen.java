@@ -222,6 +222,11 @@ public class ListHabitsScreen extends BaseScreen
         activity.showDialog(picker, "picker");
     }
 
+    public void showAchievementScreen() {
+        Intent intent = intentFactory.startAchievementActivity(activity);
+        activity.startActivity(intent);
+    }
+
     public void showCreateHabitScreen()
     {
         activity.showDialog(createHabitDialogFactory.create(), "editHabit");

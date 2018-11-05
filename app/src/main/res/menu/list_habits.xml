@@ -23,6 +23,12 @@
       tools:context=".MainActivity">
 
     <item
+        android:id="@+id/actionAchievement"
+        android:icon="?iconAchievement"
+        android:title="@string/view_achievements"
+        app:showAsAction="always"/>
+
+    <item
         android:id="@+id/actionAdd"
         android:icon="?iconAdd"
         android:title="@string/add_habit"

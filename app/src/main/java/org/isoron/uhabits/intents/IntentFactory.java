@@ -26,6 +26,7 @@ import android.support.annotation.*;
 import org.isoron.uhabits.*;
 import org.isoron.uhabits.activities.about.*;
 import org.isoron.uhabits.activities.habits.show.*;
+import org.isoron.uhabits.activities.achievements.*;
 import org.isoron.uhabits.activities.intro.*;
 import org.isoron.uhabits.activities.settings.*;
 import org.isoron.uhabits.models.*;
@@ -77,6 +78,11 @@ public class IntentFactory
         Intent intent = new Intent(context, ShowHabitActivity.class);
         intent.setData(habit.getUri());
         return intent;
+    }
+
+    public Intent startAchievementActivity(Context context)
+    {
+        return new Intent(context, AchievementActivity.class);
     }
 
     public Intent viewFAQ(Context context)

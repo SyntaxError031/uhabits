@@ -50,6 +50,7 @@
         <item name="mediumContrastTextColor">@color/grey_500</item>
         <item name="lowContrastTextColor">@color/grey_300</item>
 
+        <item name="iconAchievement">@drawable/ic_action_achievement_dark</item>
         <item name="iconAdd">@drawable/ic_action_add_dark</item>
         <item name="iconArchive">@drawable/ic_action_archive_dark</item>
         <item name="iconEdit">@drawable/ic_action_edit_dark</item>
@@ -102,6 +103,7 @@
         <item name="mediumContrastReverseTextColor">@color/grey_750</item>
         <item name="lowContrastReverseTextColor">@color/grey_300</item>
 
+        <item name="iconAchievement">@drawable/ic_action_achievement_dark</item>
         <item name="iconAdd">@drawable/ic_action_add_dark</item>
         <item name="iconArchive">@drawable/ic_action_archive_dark</item>
         <item name="iconEdit">@drawable/ic_action_edit_dark</item>

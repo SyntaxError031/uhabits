@@ -86,6 +86,10 @@ public class ListHabitsMenu extends BaseMenu
                 screen.toggleNightMode();
                 return true;
 
+            case R.id.actionAchievement:
+                screen.showAchievementScreen();
+                return true;
+
             case R.id.actionAdd:
                 screen.showCreateHabitScreen();
                 return true;

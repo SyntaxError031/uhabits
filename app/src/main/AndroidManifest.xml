@@ -102,6 +102,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.habits.list.ListHabitsActivity"/>
         </activity>
+        
+        <activity
+            android:name=".activities.achievements.AchievementActivity"
+            android:label="Achievements"
+            android:parentActivityName=".activities.habits.list.ListHabitsActivity"/>
+
+        <activity
+            android:name=".activities.achievements.DetailsActivity"
+            android:label="Details" />
 
         <receiver
             android:name=".widgets.CheckmarkWidgetProvider"

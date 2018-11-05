@@ -30,6 +30,19 @@
     <string name="add_habit">Add habit</string>
     <string name="color_picker_default_title">Change color</string>
 
+    <string name="view_achievements">My Achievements</string>
+    <string name="my_points">My Points</string>
+    <string name="my_medals">Medals</string>
+    <string name="medal_1_title">Habit Beginner</string>
+    <string name="medal_1_description">Win Over 10 points</string>
+    <string name="medal_2_title">Habit Amateur</string>
+    <string name="medal_2_description">Win Over 100 points</string>
+    <string name="medal_3_title">Habit Expert</string>
+    <string name="medal_3_description">Win Over 500 points</string>
+    <string name="medal_4_title">Habit Master</string>
+    <string name="medal_4_description">Win Over 1000 points</string>
+    <string name="view_details">View Details ></string>
+
     <string name="toast_habit_created">Habit created</string>
     <string name="toast_habit_deleted">Habits deleted</string>
     <string name="toast_habit_restored">Habits restored</string>
