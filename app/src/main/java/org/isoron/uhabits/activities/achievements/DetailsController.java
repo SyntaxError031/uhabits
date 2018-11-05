@@ -2,13 +2,10 @@ package org.isoron.uhabits.activities.achievements;
 
 import android.view.View;
 import android.widget.TextView;
-
 import org.isoron.uhabits.R;
-
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
+
+
 
 public class DetailsController {
 

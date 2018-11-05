@@ -1,6 +1,8 @@
 package org.isoron.uhabits.activities.achievements;
 
 
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.ColorMatrix;
 import android.graphics.ColorMatrixColorFilter;
 import android.widget.ImageView;
@@ -22,6 +24,18 @@ public class AchievementController {
         showPoints();
         showMedals();
     }
+
+    public void shareText(Context context) {
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("text/plain");
+        String text = "I have won " + String.valueOf(points) + " points in Loop Habit Tracker!";
+        intent.putExtra(Intent.EXTRA_SUBJECT,"Share");
+        intent.putExtra(Intent.EXTRA_TEXT, text);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(
+                Intent.createChooser(intent, "Share"));
+    }
+
 
     private void showPoints() {
         TextView pointsLabel = activity.findViewById(R.id.pointsLabel);

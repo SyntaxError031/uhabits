@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -31,6 +33,13 @@ public class AchievementActivity extends BaseActivity {
 
         actionBar.setDisplayHomeAsUpEnabled(true);
 
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
         controller = new AchievementController(this);
 
         Button details_btn = findViewById(R.id.view_details);
@@ -42,6 +51,22 @@ public class AchievementActivity extends BaseActivity {
             }
             });
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.achievements, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.actionShare:
+                controller.shareText(this);
+                break;
+        }
+        return true;
     }
 
 }

@@ -105,8 +105,7 @@
         
         <activity
             android:name=".activities.achievements.AchievementActivity"
-            android:label="Achievements"
-            android:parentActivityName=".activities.habits.list.ListHabitsActivity"/>
+            android:label="Achievements" />
 
         <activity
             android:name=".activities.achievements.DetailsActivity"
