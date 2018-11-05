@@ -43,6 +43,8 @@
     <string name="medal_4_description">Win Over 1000 points</string>
     <string name="view_details">View Details ></string>
 
+    <string name="records">Records (Only Show Recent 5)</string>
+
     <string name="toast_habit_created">Habit created</string>
     <string name="toast_habit_deleted">Habits deleted</string>
     <string name="toast_habit_restored">Habits restored</string>

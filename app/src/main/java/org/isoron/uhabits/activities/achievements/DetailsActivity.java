@@ -10,7 +10,11 @@ import android.widget.Button;
 import org.isoron.uhabits.R;
 import org.isoron.uhabits.activities.*;
 
+import java.text.ParseException;
+
 public class DetailsActivity extends BaseActivity {
+
+    private DetailsController controller;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +39,7 @@ public class DetailsActivity extends BaseActivity {
             }
         });
 
+        controller = new DetailsController(this);
     }
 
 }
