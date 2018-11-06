@@ -24,7 +24,12 @@ public class DetailsController {
         int[] timeList = {R.id.record_1_time, R.id.record_2_time, R.id.record_3_time, R.id.record_4_time, R.id.record_5_time};
         int[] valueList = {R.id.record_1_value, R.id.record_2_value, R.id.record_3_value, R.id.record_4_value, R.id.record_5_value};
 
-        int size = recordList.size();
+        int size;
+        if(recordList.size() < 5)
+            size = recordList.size();
+        else
+            size = 5;
+
         int i;
         for(i = 0; i < size; i++) {
             TextView textView = activity.findViewById(nameList[i]);
@@ -50,5 +55,6 @@ public class DetailsController {
         recordList.add(tmp);
         tmp = new Record("exercise", "2018-10-07 10:23", 5);
         recordList.add(tmp);
+       
     }
 }
