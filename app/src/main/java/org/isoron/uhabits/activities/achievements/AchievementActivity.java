@@ -104,6 +104,7 @@ public class AchievementActivity extends BaseActivity {
                 String sdCardPath = Environment.getExternalStorageDirectory().getPath();
                 // 图片文件路径
                 filePath = sdCardPath + File.separator + "screenshot" + String.valueOf(screenshotNum) + ".png";
+                screenshotNum++;
                 File file = new File(filePath);
                 FileOutputStream os = new FileOutputStream(file);
                 bitmap.compress(Bitmap.CompressFormat.PNG, 100, os);
