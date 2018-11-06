@@ -10,6 +10,7 @@ import android.widget.TextView;
 import org.isoron.uhabits.R;
 
 
+
 public class AchievementController {
 
     private AchievementActivity activity;

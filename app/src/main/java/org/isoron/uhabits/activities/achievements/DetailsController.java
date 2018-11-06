@@ -55,6 +55,6 @@ public class DetailsController {
         recordList.add(tmp);
         tmp = new Record("exercise", "2018-10-07 10:23", 5);
         recordList.add(tmp);
-       
+
     }
 }
