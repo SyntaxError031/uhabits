@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class DetailsController {
 
     private DetailsActivity activity;
-    private ArrayList<Record> recordList = new ArrayList<Record>();
+    private ArrayList<Record> recordList = new ArrayList<>();
 
     DetailsController(DetailsActivity activity) {
         this.activity = activity;
@@ -19,10 +19,14 @@ public class DetailsController {
     }
 
     private void showRecords() {
-        int[] idList = {R.id.record_1, R.id.record_2, R.id.record_3, R.id.record_4, R.id.record_5};
-        int[] nameList = {R.id.record_1_name, R.id.record_2_name, R.id.record_3_name, R.id.record_4_name, R.id.record_5_name};
-        int[] timeList = {R.id.record_1_time, R.id.record_2_time, R.id.record_3_time, R.id.record_4_time, R.id.record_5_time};
-        int[] valueList = {R.id.record_1_value, R.id.record_2_value, R.id.record_3_value, R.id.record_4_value, R.id.record_5_value};
+        int[] idList = {R.id.record_1, R.id.record_2, R.id.record_3, R.id.record_4,
+                R.id.record_5};
+        int[] nameList = {R.id.record_1_name, R.id.record_2_name, R.id.record_3_name,
+                R.id.record_4_name, R.id.record_5_name};
+        int[] timeList = {R.id.record_1_time, R.id.record_2_time, R.id.record_3_time,
+                R.id.record_4_time, R.id.record_5_time};
+        int[] valueList = {R.id.record_1_value, R.id.record_2_value, R.id.record_3_value,
+                R.id.record_4_value, R.id.record_5_value};
 
         int size;
         if(recordList.size() < 5)
@@ -38,7 +42,7 @@ public class DetailsController {
             textView.setText(recordList.get(i).getTime());
             textView = activity.findViewById(valueList[i]);
             int value = recordList.get(i).getValue();
-            textView.setText("+" + String.valueOf(value));
+            textView.setText(String.format(activity.getResources().getString(R.string.points_won), value));
         }
 
         if(i < 5) {

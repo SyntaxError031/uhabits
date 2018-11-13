@@ -49,6 +49,8 @@ public class AchievementActivity extends BaseActivity {
         });
 
         controller = new AchievementController(this);
+        controller.showPoints();
+        controller.showMedals();
 
         Button details_btn = findViewById(R.id.view_details);
         details_btn.setOnClickListener(new View.OnClickListener() {
@@ -117,4 +119,7 @@ public class AchievementActivity extends BaseActivity {
         }
     }
 
+    public AchievementController getController() {
+        return controller;
+    }
 }

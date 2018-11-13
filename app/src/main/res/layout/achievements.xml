@@ -78,7 +78,8 @@
                     android:id="@+id/medal_image_1"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:src="@drawable/icon_medal_1" />
+                    android:src="@drawable/icon_medal_1"
+                    android:contentDescription="@string/medal_1_title"/>
 
                 <TextView
                     android:layout_width="wrap_content"

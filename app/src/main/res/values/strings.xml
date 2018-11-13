@@ -45,6 +45,7 @@
     <string name="view_details">View Details ></string>
 
     <string name="records">Records (Only Show Recent 5)</string>
+    <string name="points_won">+%1$d</string>
 
     <string name="toast_habit_created">Habit created</string>
     <string name="toast_habit_deleted">Habits deleted</string>

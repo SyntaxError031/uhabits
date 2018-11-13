@@ -1,10 +1,12 @@
 package org.isoron.uhabits.activities.achievements;
 
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.ColorMatrix;
 import android.graphics.ColorMatrixColorFilter;
+import android.support.annotation.VisibleForTesting;
 import android.widget.ImageView;
 import android.widget.TextView;
 import org.isoron.uhabits.R;
@@ -19,11 +21,13 @@ public class AchievementController {
     private final String LOCKED = "LOCKED";
     private final int ORANGE = 0xffE64A19;
     private final int GRAY = 0xff616161;
+    private TextView pointsLabel;
 
     protected AchievementController(AchievementActivity activity) {
         this.activity = activity;
-        showPoints();
-        showMedals();
+        points = 150;
+    //    showPoints();
+    //    showMedals();
     }
 
     public void shareText(Context context) {
@@ -38,67 +42,39 @@ public class AchievementController {
     }
 
 
-    private void showPoints() {
-        TextView pointsLabel = activity.findViewById(R.id.pointsLabel);
-        points = 150;
+    public void showPoints() {
+        pointsLabel = activity.findViewById(R.id.pointsLabel);
+    //    points = 150;
         pointsLabel.setText(String.valueOf(points));
     }
 
-    private void showMedals() {
-        TextView text1 = activity.findViewById(R.id.medal_1_status);
-        TextView text2 = activity.findViewById(R.id.medal_2_status);
-        TextView text3 = activity.findViewById(R.id.medal_3_status);
-        TextView text4 = activity.findViewById(R.id.medal_4_status);
+    public void showMedals() {
+        int[] idList = { R.id.medal_1_status, R.id.medal_2_status, R.id.medal_3_status, R.id.medal_4_status};
+        int[] imageList = {R.id.medal_image_1, R.id.medal_image_2, R.id.medal_image_3, R.id.medal_image_4};
         ImageView imageView;
 
-        text1.setText(LOCKED); text1.setTextColor(GRAY);
-        text2.setText(LOCKED); text2.setTextColor(GRAY);
-        text3.setText(LOCKED); text3.setTextColor(GRAY);
-        text4.setText(LOCKED); text4.setTextColor(GRAY);
+        Medals[] medals;
 
-        if(points >= 1000) {
-            text1.setText(ACHIEVED); text1.setTextColor(ORANGE);
-            text2.setText(ACHIEVED); text2.setTextColor(ORANGE);
-            text3.setText(ACHIEVED); text3.setTextColor(ORANGE);
-            text4.setText(ACHIEVED); text4.setTextColor(ORANGE);
+        medals = Medals.values();
+        TextView textView;
+        for(int i = 0; i < medals.length; i++) {
+            medals[i].changeStatus(150);
+            textView = activity.findViewById(idList[i]);
+            imageView = activity.findViewById(imageList[i]);
+            if(medals[i].getStatus().toString().equals(ACHIEVED)) {
+                textView.setText(ACHIEVED);
+                textView.setTextColor(ORANGE);
+            }
+            else {
+                textView.setText(LOCKED);
+                textView.setTextColor(GRAY);
+                imageView.setColorFilter(convert());
+            }
         }
-        else if(points >= 500) {
-            text1.setText(ACHIEVED); text1.setTextColor(ORANGE);
-            text2.setText(ACHIEVED); text2.setTextColor(ORANGE);
-            text3.setText(ACHIEVED); text3.setTextColor(ORANGE);
-            imageView = activity.findViewById(R.id.medal_image_4);
-            imageView.setColorFilter(convert());
 
-        }
-        else if(points >= 100) {
-            text1.setText(ACHIEVED); text1.setTextColor(ORANGE);
-            text2.setText(ACHIEVED); text2.setTextColor(ORANGE);
-            imageView = activity.findViewById(R.id.medal_image_4);
-            imageView.setColorFilter(convert());
-            imageView = activity.findViewById(R.id.medal_image_3);
-            imageView.setColorFilter(convert());
-        }
-        else if(points >= 10) {
-            text1.setText(ACHIEVED); text1.setTextColor(ORANGE);
-            imageView = activity.findViewById(R.id.medal_image_4);
-            imageView.setColorFilter(convert());
-            imageView = activity.findViewById(R.id.medal_image_3);
-            imageView.setColorFilter(convert());
-            imageView = activity.findViewById(R.id.medal_image_2);
-            imageView.setColorFilter(convert());
-        }
-        else {
-            imageView = activity.findViewById(R.id.medal_image_4);
-            imageView.setColorFilter(convert());
-            imageView = activity.findViewById(R.id.medal_image_3);
-            imageView.setColorFilter(convert());
-            imageView = activity.findViewById(R.id.medal_image_2);
-            imageView.setColorFilter(convert());
-            imageView = activity.findViewById(R.id.medal_image_1);
-            imageView.setColorFilter(convert());
-        }
     }
 
+    // 将图片转为黑白
     private ColorMatrixColorFilter convert() {
         ColorMatrix cm = new ColorMatrix();
         cm.setSaturation(0);
